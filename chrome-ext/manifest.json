@@ -1,0 +1,38 @@
+{
+  "name": "Chess Digital Rain",
+  "short_name": "Chess Digital Rain",
+  "description": "Chess Digital Rain",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "permissions": [
+  ],
+  "icons": {
+    "48": "img/icon48.png",
+    "96": "img/icon96.png",
+    "128": "img/icon128.png"
+  },
+  "browser_action": {
+    "default_title": "Chess Digital Rain",
+    "default_icon": "img/icon96.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.chess.com/play/computer",
+        "https://www.chess.com/play/online",
+        "https://www.chess.com/play/online/friend",
+        "https://www.chess.com/game/live/*"
+      ],
+      "css" :[
+        "css/cdr.css"
+      ],
+      "js" :[
+        "src/cdr.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "font/*",
+    "img/*"
+  ]
+}

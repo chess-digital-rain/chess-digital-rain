@@ -1,0 +1,150 @@
+chess-board.board {
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+chess-board.board > .coordinates:not(.outside) {
+    display: none;
+}
+
+chess-board.board > div.highlight {
+    background-color: hsl(160, 100%, 50%) !important;
+    background-image: linear-gradient(90deg, #000 25%, hsl(160, 100%, 50%) 25%, hsl(160, 100%, 50%) 50%, #000 50%, #000 75%, hsl(160, 100%, 50%) 75%, hsl(160, 100%, 50%) 100%);
+    background-size: 3px 3px;
+    opacity: 0.25 !important;
+}
+
+chess-board.board > .hover-square,
+chess-board.board > .piece {
+    font-size: var(--cdr-font-size, 114px);
+    line-height: var(--cdr-font-size, 114px);
+}
+
+chess-board.board > .hover-square {
+    border: 2px dashed hsl(160, 100%, 50%) !important;
+}
+
+chess-board.board > .piece {
+    background-image: none !important;
+    display: flex;
+}
+
+chess-board.board > .piece::after {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -53%);
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+chess-board.board > .square-11::after,
+chess-board.board > .square-31::after,
+chess-board.board > .square-51::after,
+chess-board.board > .square-71::after,
+chess-board.board > .square-22::after,
+chess-board.board > .square-42::after,
+chess-board.board > .square-62::after,
+chess-board.board > .square-82::after,
+chess-board.board > .square-13::after,
+chess-board.board > .square-33::after,
+chess-board.board > .square-53::after,
+chess-board.board > .square-73::after,
+chess-board.board > .square-24::after,
+chess-board.board > .square-44::after,
+chess-board.board > .square-64::after,
+chess-board.board > .square-84::after,
+chess-board.board > .square-15::after,
+chess-board.board > .square-35::after,
+chess-board.board > .square-55::after,
+chess-board.board > .square-75::after,
+chess-board.board > .square-26::after,
+chess-board.board > .square-46::after,
+chess-board.board > .square-66::after,
+chess-board.board > .square-86::after,
+chess-board.board > .square-17::after,
+chess-board.board > .square-37::after,
+chess-board.board > .square-57::after,
+chess-board.board > .square-77::after,
+chess-board.board > .square-28::after,
+chess-board.board > .square-48::after,
+chess-board.board > .square-68::after,
+chess-board.board > .square-88::after {
+    opacity: 0.4;
+}
+
+chess-board.board > .piece.wp::after,
+chess-board.board > .piece.wr::after,
+chess-board.board > .piece.wn::after,
+chess-board.board > .piece.wb::after,
+chess-board.board > .piece.wk::after,
+chess-board.board > .piece.wq::after {
+    color: hsl(0, 0%, 100%);
+}
+chess-board.board > .piece.bp::after,
+chess-board.board > .piece.br::after,
+chess-board.board > .piece.bn::after,
+chess-board.board > .piece.bb::after,
+chess-board.board > .piece.bk::after,
+chess-board.board > .piece.bq::after {
+    color: hsl(40, 100%, 50%);
+}
+
+chess-board.board > .piece.wp::after {
+    content: "P";
+}
+chess-board.board > .piece.wr::after {
+    content: "R";
+}
+chess-board.board > .piece.wn::after {
+    content: "N";
+}
+chess-board.board > .piece.wb::after {
+    content: "B";
+}
+chess-board.board > .piece.wq::after {
+    content: "Q";
+}
+chess-board.board > .piece.wk::after {
+    content: "K";
+}
+chess-board.board > .piece.bp::after {
+    content: "P";
+}
+chess-board.board > .piece.br::after {
+    content: "R";
+}
+chess-board.board > .piece.bn::after {
+    content: "N";
+}
+chess-board.board > .piece.bb::after {
+    content: "B";
+}
+chess-board.board > .piece.bq::after {
+    content: "Q";
+}
+chess-board.board > .piece.bk::after {
+    content: "K";
+}
+
+chess-board.board.wk-danger > .piece.wk::after,
+chess-board.board.bk-danger > .piece.bk::after {
+    color: hsl(0, 100%, 50%);
+    text-shadow: 0 0 20px hsl(0, 100%, 50%);
+    opacity: 1;
+}
+
+.cdr-main {
+    position: absolute;
+    background-color: #000;
+    width: var(--cdr-board-size, 912px);
+    height: var(--cdr-board-size, 912px);
+}
+
+.cdr-canvas {
+    display: block;
+    position: relative;
+}

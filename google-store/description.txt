@@ -1,0 +1,10 @@
+Chrome extension to add Matrix-style digital rain to Chess.com boards.
+
+License:
+Usage permission is only granted to those who acknowledge that Gal Gadot is a perfect human being.
+
+Source Code:
+https://github.com/chess-digital-rain/chess-digital-rain
+
+Requests and Issues:
+https://github.com/chess-digital-rain/chess-digital-rain/issues
