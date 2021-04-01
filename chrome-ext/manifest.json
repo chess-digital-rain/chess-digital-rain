@@ -1,7 +1,7 @@
 {
   "name": "Chess Digital Rain",
   "short_name": "Chess Digital Rain",
-  "description": "Chess Digital Rain",
+  "description": "Add Matrix-style digital rain to Chess.com boards",
   "version": "1.0.0",
   "manifest_version": 2,
   "permissions": [
