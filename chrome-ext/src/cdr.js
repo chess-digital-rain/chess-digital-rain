@@ -202,14 +202,20 @@ function onMoveListChanged(mutationsList) {
 		if (mutation.type === 'childList' && mutation.addedNodes && mutation.addedNodes.length > 0) {
 			for (let node of mutation.addedNodes) {
 				if (!node.classList.contains('move') && !node.classList.contains('game-result') && !node.classList.contains('time-white') && !node.classList.contains('time-black')) {
-					const msgText = node.textContent;
+					let msgText = '';
+					if (node.querySelector('[class*="rook-"]')) {
+						msgText = 'R' + msgText;
+					} else if (node.querySelector('[class*="knight-"]')) {
+						msgText = 'N' + msgText;
+					} else if (node.querySelector('[class*="bishop-"]')) {
+						msgText = 'B' + msgText;
+					} else if (node.querySelector('[class*="queen-"]')) {
+						msgText = 'Q' + msgText;
+					} else if (node.querySelector('[class*="king-"]')) {
+						msgText = 'K' + msgText;
+					}
+					msgText += node.textContent;
 					const isWhite = node.classList.contains('white');
-					// if (vars.messages.length > 0) {
-					// 	const lastMessageDetails = vars.messages[vars.messages.length - 1].details;
-					// 	if (lastMessageDetails.msgText === msgText && (lastMessageDetails.isWhite === isWhite)) {
-					// 		return;
-					// 	}
-					// }
 					const isTake = msgText.includes('x');
 					const isPromotion = msgText.includes('=');
 					const isCheck = msgText.includes('+');
