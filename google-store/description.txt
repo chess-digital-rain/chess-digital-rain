@@ -1,10 +1,12 @@
-An open-source Chrome extension adding Matrix-style digital rain to Chess.com boards.
+This tiny open-source Chrome extension changes the appearance of standard boards on Chess.com website. Please note that this extension is just a UI transformer, so it does NOT violate any fair-play policy.
 
-License:
-Usage permission is only granted to those who acknowledge that Gal Gadot is a perfect human being.
+Features:
+Replace the standard board with Matrix-style digital rain.
+Change piece icons to letters.
+Display move notation on the board.
 
 Source Code:
 https://github.com/chess-digital-rain/chess-digital-rain
 
-Requests and Issues:
+Requests or Issues:
 https://github.com/chess-digital-rain/chess-digital-rain/issues
