@@ -278,12 +278,17 @@ function updateBoardSize() {
 }
 
 function createStreams() {
+	vars.streams = [];
 	for (let i = 0; i < consts.numOfStreams; i++) {
 		const numOfDrops = rnd(consts.minNumOfDrops, consts.maxNumOfDrops, true);
 		const stream = new Stream(numOfDrops);
 		stream.init();
 		vars.streams.push(stream);
 	}
+}
+
+function clearMessages() {
+	vars.messages = [];
 }
 
 function setup() {
@@ -295,6 +300,7 @@ function setup() {
 	updateBoardSize();
 	window.addEventListener('resize', updateBoardSize);
 	createStreams();
+	clearMessages();
 }
 
 // draw ----------------------------------------------------------------------------------------------------------------
@@ -318,9 +324,6 @@ function draw() {
 	if (!msgStillOnScreen) {
 		vars.messages.shift();
 	}
-	// setTimeout(() => {
-	//   draw();
-	// }, 100);
 	window.requestAnimationFrame(draw);
 }
 
