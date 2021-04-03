@@ -12,7 +12,7 @@ chess-board.board > div.highlight {
     background-color: hsl(160, 100%, 50%) !important;
     background-image: linear-gradient(90deg, #000 25%, hsl(160, 100%, 50%) 25%, hsl(160, 100%, 50%) 50%, #000 50%, #000 75%, hsl(160, 100%, 50%) 75%, hsl(160, 100%, 50%) 100%);
     background-size: 3px 3px;
-    opacity: 0.25 !important;
+    opacity: 0.3 !important;
 }
 
 chess-board.board > .hover-square,
