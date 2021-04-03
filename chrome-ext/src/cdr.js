@@ -21,6 +21,8 @@ vars = {
 	ctx: null,
 	streams: [],
 	messages: [],
+	gameResultEventTime: 0,
+	processMoves: true
 }
 elms = {
 	chessBoard: null,
@@ -201,7 +203,15 @@ function onMoveListChanged(mutationsList) {
 	for (let mutation of mutationsList) {
 		if (mutation.type === 'childList' && mutation.addedNodes && mutation.addedNodes.length > 0) {
 			for (let node of mutation.addedNodes) {
-				if (!node.classList.contains('move') && !node.classList.contains('game-result') && !node.classList.contains('time-white') && !node.classList.contains('time-black')) {
+				if (node.classList.contains('game-result')) {
+					vars.gameResultEventTime = Date.now();
+					setTimeout(() => {
+						vars.gameResultEventTime = 0;
+						vars.processMoves = true;
+					}, 3000);
+					return;
+				}
+				if (vars.processMoves && !node.classList.contains('move') && !node.classList.contains('time-white') && !node.classList.contains('time-black')) {
 					let msgText = '';
 					if (node.querySelector('[class*="rook-"]')) {
 						msgText = 'R' + msgText;
@@ -235,6 +245,9 @@ function onMoveListChanged(mutationsList) {
 						elms.chessBoard.classList.add('wk-danger');
 					} else if (isWhite && (isCheck || isCheckmate)) {
 						elms.chessBoard.classList.add('bk-danger');
+					}
+					if (Date.now() - vars.gameResultEventTime < 3000) {
+						vars.processMoves = false;
 					}
 				}
 			}
@@ -301,6 +314,8 @@ function setup() {
 	window.addEventListener('resize', updateBoardSize);
 	createStreams();
 	clearMessages();
+	vars.gameResultEventTime = 0;
+	vars.processMoves = true;
 }
 
 // draw ----------------------------------------------------------------------------------------------------------------
