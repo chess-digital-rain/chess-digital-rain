@@ -10,5 +10,5 @@ Display move notation on the board.
 Source Code:
 https://github.com/chess-digital-rain/chess-digital-rain
 
-Requests or Issues:
+Submit requests or report bugs:
 https://github.com/chess-digital-rain/chess-digital-rain/issues
