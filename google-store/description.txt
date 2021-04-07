@@ -7,8 +7,8 @@ Replace the standard board with Matrix-style digital rain.
 Change piece icons to letters.
 Display move notation on the board.
 
+Submit a request or report a bug:
+https://github.com/chess-digital-rain/chess-digital-rain/issues
+
 Source Code:
 https://github.com/chess-digital-rain/chess-digital-rain
-
-Submit requests or report bugs:
-https://github.com/chess-digital-rain/chess-digital-rain/issues
