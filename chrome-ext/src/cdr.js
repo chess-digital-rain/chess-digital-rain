@@ -17,6 +17,7 @@ consts = {
 	msgTextSize: 25,
 };
 vars = {
+	resizeEventAttached: false,
 	boardSize: 0,
 	ctx: null,
 	streams: [],
@@ -311,7 +312,10 @@ function setup() {
 	createMainElement();
 	createCanvasElement();
 	updateBoardSize();
-	window.addEventListener('resize', updateBoardSize);
+	if (!vars.resizeEventAttached) {
+		window.addEventListener('resize', updateBoardSize);
+		vars.resizeEventAttached = true;
+	}
 	createStreams();
 	clearMessages();
 	vars.gameResultEventTime = 0;
