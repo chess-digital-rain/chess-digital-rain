@@ -1,3 +1,15 @@
+.cdr-main {
+    position: absolute;
+    background-color: #000;
+    width: var(--cdr-board-size, 912px);
+    height: var(--cdr-board-size, 912px);
+}
+
+.cdr-canvas {
+    display: block;
+    position: relative;
+}
+
 chess-board.board {
     background-size: cover;
     opacity: 0;
@@ -8,89 +20,11 @@ chess-board.board > .coordinates:not(.outside) {
     display: none;
 }
 
-chess-board.board > div.highlight {
-    background-color: hsl(160, 100%, 50%) !important;
-    background-image: linear-gradient(90deg, hsl(160, 100%, 50%) 50%, #000 50%, #000 0);
-    background-size: 2px auto;
-    opacity: 0.3 !important;
-}
-
-chess-board.board > .hover-square,
-chess-board.board > .piece {
-    font-size: var(--cdr-font-size, 114px);
-    line-height: var(--cdr-font-size, 114px);
-}
-
-chess-board.board > .hover-square {
-    border: 2px dashed hsl(160, 100%, 50%) !important;
-}
-
 chess-board.board > .piece {
     background-image: none !important;
     display: flex;
-}
-
-chess-board.board > .piece::after {
-    display: inline-block;
-    position: relative;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -53%);
-    font-family: 'Play', sans-serif;
-    font-weight: 700;
-    opacity: 0.8;
-}
-
-chess-board.board > .square-11::after,
-chess-board.board > .square-31::after,
-chess-board.board > .square-51::after,
-chess-board.board > .square-71::after,
-chess-board.board > .square-22::after,
-chess-board.board > .square-42::after,
-chess-board.board > .square-62::after,
-chess-board.board > .square-82::after,
-chess-board.board > .square-13::after,
-chess-board.board > .square-33::after,
-chess-board.board > .square-53::after,
-chess-board.board > .square-73::after,
-chess-board.board > .square-24::after,
-chess-board.board > .square-44::after,
-chess-board.board > .square-64::after,
-chess-board.board > .square-84::after,
-chess-board.board > .square-15::after,
-chess-board.board > .square-35::after,
-chess-board.board > .square-55::after,
-chess-board.board > .square-75::after,
-chess-board.board > .square-26::after,
-chess-board.board > .square-46::after,
-chess-board.board > .square-66::after,
-chess-board.board > .square-86::after,
-chess-board.board > .square-17::after,
-chess-board.board > .square-37::after,
-chess-board.board > .square-57::after,
-chess-board.board > .square-77::after,
-chess-board.board > .square-28::after,
-chess-board.board > .square-48::after,
-chess-board.board > .square-68::after,
-chess-board.board > .square-88::after {
-    opacity: 0.4;
-}
-
-chess-board.board > .piece.wp::after,
-chess-board.board > .piece.wr::after,
-chess-board.board > .piece.wn::after,
-chess-board.board > .piece.wb::after,
-chess-board.board > .piece.wk::after,
-chess-board.board > .piece.wq::after {
-    color: hsl(0, 0%, 100%);
-}
-chess-board.board > .piece.bp::after,
-chess-board.board > .piece.br::after,
-chess-board.board > .piece.bn::after,
-chess-board.board > .piece.bb::after,
-chess-board.board > .piece.bk::after,
-chess-board.board > .piece.bq::after {
-    color: hsl(40, 100%, 50%);
+    font-size: var(--cdr-font-size, 114px);
+    line-height: var(--cdr-font-size, 114px);
 }
 
 chess-board.board > .piece.wp::after {
@@ -130,6 +64,70 @@ chess-board.board > .piece.bk::after {
     content: "K";
 }
 
+chess-board.board > .piece::after {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -53%);
+    font-family: 'Play', sans-serif;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+chess-board.board > .square-11:not(.dragging)::after,
+chess-board.board > .square-31:not(.dragging)::after,
+chess-board.board > .square-51:not(.dragging)::after,
+chess-board.board > .square-71:not(.dragging)::after,
+chess-board.board > .square-22:not(.dragging)::after,
+chess-board.board > .square-42:not(.dragging)::after,
+chess-board.board > .square-62:not(.dragging)::after,
+chess-board.board > .square-82:not(.dragging)::after,
+chess-board.board > .square-13:not(.dragging)::after,
+chess-board.board > .square-33:not(.dragging)::after,
+chess-board.board > .square-53:not(.dragging)::after,
+chess-board.board > .square-73:not(.dragging)::after,
+chess-board.board > .square-24:not(.dragging)::after,
+chess-board.board > .square-44:not(.dragging)::after,
+chess-board.board > .square-64:not(.dragging)::after,
+chess-board.board > .square-84:not(.dragging)::after,
+chess-board.board > .square-15:not(.dragging)::after,
+chess-board.board > .square-35:not(.dragging)::after,
+chess-board.board > .square-55:not(.dragging)::after,
+chess-board.board > .square-75:not(.dragging)::after,
+chess-board.board > .square-26:not(.dragging)::after,
+chess-board.board > .square-46:not(.dragging)::after,
+chess-board.board > .square-66:not(.dragging)::after,
+chess-board.board > .square-86:not(.dragging)::after,
+chess-board.board > .square-17:not(.dragging)::after,
+chess-board.board > .square-37:not(.dragging)::after,
+chess-board.board > .square-57:not(.dragging)::after,
+chess-board.board > .square-77:not(.dragging)::after,
+chess-board.board > .square-28:not(.dragging)::after,
+chess-board.board > .square-48:not(.dragging)::after,
+chess-board.board > .square-68:not(.dragging)::after,
+chess-board.board > .square-88:not(.dragging)::after {
+    filter: brightness(0.5);
+}
+
+chess-board.board > .piece.wp::after,
+chess-board.board > .piece.wr::after,
+chess-board.board > .piece.wn::after,
+chess-board.board > .piece.wb::after,
+chess-board.board > .piece.wk::after,
+chess-board.board > .piece.wq::after {
+    color: hsl(0, 0%, 100%);
+}
+
+chess-board.board > .piece.bp::after,
+chess-board.board > .piece.br::after,
+chess-board.board > .piece.bn::after,
+chess-board.board > .piece.bb::after,
+chess-board.board > .piece.bk::after,
+chess-board.board > .piece.bq::after {
+    color: hsl(40, 100%, 50%);
+}
+
 chess-board.board.wk-danger > .piece.wk::after,
 chess-board.board.bk-danger > .piece.bk::after {
     color: hsl(0, 100%, 50%);
@@ -137,14 +135,51 @@ chess-board.board.bk-danger > .piece.bk::after {
     opacity: 1;
 }
 
-.cdr-main {
-    position: absolute;
-    background-color: #000;
-    width: var(--cdr-board-size, 912px);
-    height: var(--cdr-board-size, 912px);
+chess-board.board > div.highlight {
+    background-color: hsl(160, 100%, 50%) !important;
+    background-image: linear-gradient(90deg, hsl(160, 100%, 50%) 50%, #000 50%, #000 0);
+    background-size: 2px auto;
+    opacity: 0.3 !important;
 }
 
-.cdr-canvas {
-    display: block;
-    position: relative;
+chess-board.board > .hover-square {
+    font-size: var(--cdr-font-size, 114px);
+    line-height: var(--cdr-font-size, 114px);
+}
+
+chess-board.board > .hover-square {
+    border: 2px dashed hsl(160, 100%, 50%) !important;
+}
+
+@keyframes hover-animation {
+    0% {
+        left: 0;
+        top: 0;
+    }
+    25% {
+        left: calc(100% - 16px);
+        top: 0;
+    }
+    50% {
+        left: calc(100% - 16px);
+        top: calc(100% - 16px);
+    }
+    75% {
+        left: 0;
+        top: calc(100% - 16px);
+    }
+    100% {
+        left: 0;
+        top: 0;
+    }
+}
+chess-board.board > .hover-square::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 16px;
+    height: 16px;
+    background-color: hsl(160, 100%, 50%);
+    animation: hover-animation 1s linear infinite;
 }
