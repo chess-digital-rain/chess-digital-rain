@@ -1,17 +1,15 @@
 {
+  "manifest_version": 3,
+  "version": "1.0.1",
   "name": "Chess Digital Rain",
   "short_name": "Chess Digital Rain",
   "description": "An open-source Chrome extension for Chess.com adding Matrix-style digital rain to standard boards.",
-  "version": "1.0.1",
-  "manifest_version": 2,
-  "permissions": [
-  ],
   "icons": {
     "48": "img/icon48.png",
     "96": "img/icon96.png",
     "128": "img/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_title": "Chess Digital Rain",
     "default_icon": "img/icon96.png"
   },
@@ -32,7 +30,14 @@
     }
   ],
   "web_accessible_resources": [
-    "font/*",
-    "img/*"
+    {
+      "resources": [
+        "font/*",
+        "img/*"
+      ],
+      "matches": [
+        "https://www.chess.com/*"
+      ]
+    }
   ]
 }

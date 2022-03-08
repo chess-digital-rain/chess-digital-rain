@@ -167,8 +167,8 @@ function Message(details) {
 function addFonts() {
 	const styleElm = document.createElement('style');
 	styleElm.textContent = `
-	@font-face { font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play Regular'), local('Play-Regular'), url("${chrome.extension.getURL('font/play-400.woff2')}"), url("${chrome.extension.getURL('font/play-400.woff')}"); }
-	@font-face { font-family: 'Play'; font-style: normal; font-weight: 700; src: local('Play Bold'), local('Play-Bold'), url("${chrome.extension.getURL('font/play-700.woff2')}"), url("${chrome.extension.getURL('font/play-700.woff')}"); }
+	@font-face { font-family: 'Play'; font-style: normal; font-weight: 400; src: local('Play Regular'), local('Play-Regular'), url("${chrome.runtime.getURL('font/play-400.woff2')}"), url("${chrome.runtime.getURL('font/play-400.woff')}"); }
+	@font-face { font-family: 'Play'; font-style: normal; font-weight: 700; src: local('Play Bold'), local('Play-Bold'), url("${chrome.runtime.getURL('font/play-700.woff2')}"), url("${chrome.runtime.getURL('font/play-700.woff')}"); }
 	`;
 	document.head.appendChild(styleElm);
 }
