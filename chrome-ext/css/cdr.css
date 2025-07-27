@@ -10,61 +10,61 @@
     position: relative;
 }
 
-chess-board.board {
+wc-chess-board.board {
     background-size: cover;
     opacity: 0;
     transition: opacity 2s ease-in-out;
 }
 
-chess-board.board > .coordinates:not(.outside) {
+wc-chess-board.board > .coordinates:not(.outside) {
     display: none;
 }
 
-chess-board.board > .piece {
+wc-chess-board.board > .piece {
     background-image: none !important;
     display: flex;
     font-size: var(--cdr-font-size, 114px);
     line-height: var(--cdr-font-size, 114px);
 }
 
-chess-board.board > .piece.wp::after {
+wc-chess-board.board > .piece.wp::after {
     content: "P";
 }
-chess-board.board > .piece.wr::after {
+wc-chess-board.board > .piece.wr::after {
     content: "R";
 }
-chess-board.board > .piece.wn::after {
+wc-chess-board.board > .piece.wn::after {
     content: "N";
 }
-chess-board.board > .piece.wb::after {
+wc-chess-board.board > .piece.wb::after {
     content: "B";
 }
-chess-board.board > .piece.wq::after {
+wc-chess-board.board > .piece.wq::after {
     content: "Q";
 }
-chess-board.board > .piece.wk::after {
+wc-chess-board.board > .piece.wk::after {
     content: "K";
 }
-chess-board.board > .piece.bp::after {
+wc-chess-board.board > .piece.bp::after {
     content: "P";
 }
-chess-board.board > .piece.br::after {
+wc-chess-board.board > .piece.br::after {
     content: "R";
 }
-chess-board.board > .piece.bn::after {
+wc-chess-board.board > .piece.bn::after {
     content: "N";
 }
-chess-board.board > .piece.bb::after {
+wc-chess-board.board > .piece.bb::after {
     content: "B";
 }
-chess-board.board > .piece.bq::after {
+wc-chess-board.board > .piece.bq::after {
     content: "Q";
 }
-chess-board.board > .piece.bk::after {
+wc-chess-board.board > .piece.bk::after {
     content: "K";
 }
 
-chess-board.board > .piece::after {
+wc-chess-board.board > .piece::after {
     display: inline-block;
     position: relative;
     left: 50%;
@@ -75,79 +75,79 @@ chess-board.board > .piece::after {
     opacity: 0.9;
 }
 
-chess-board.board > .square-11:not(.dragging)::after,
-chess-board.board > .square-31:not(.dragging)::after,
-chess-board.board > .square-51:not(.dragging)::after,
-chess-board.board > .square-71:not(.dragging)::after,
-chess-board.board > .square-22:not(.dragging)::after,
-chess-board.board > .square-42:not(.dragging)::after,
-chess-board.board > .square-62:not(.dragging)::after,
-chess-board.board > .square-82:not(.dragging)::after,
-chess-board.board > .square-13:not(.dragging)::after,
-chess-board.board > .square-33:not(.dragging)::after,
-chess-board.board > .square-53:not(.dragging)::after,
-chess-board.board > .square-73:not(.dragging)::after,
-chess-board.board > .square-24:not(.dragging)::after,
-chess-board.board > .square-44:not(.dragging)::after,
-chess-board.board > .square-64:not(.dragging)::after,
-chess-board.board > .square-84:not(.dragging)::after,
-chess-board.board > .square-15:not(.dragging)::after,
-chess-board.board > .square-35:not(.dragging)::after,
-chess-board.board > .square-55:not(.dragging)::after,
-chess-board.board > .square-75:not(.dragging)::after,
-chess-board.board > .square-26:not(.dragging)::after,
-chess-board.board > .square-46:not(.dragging)::after,
-chess-board.board > .square-66:not(.dragging)::after,
-chess-board.board > .square-86:not(.dragging)::after,
-chess-board.board > .square-17:not(.dragging)::after,
-chess-board.board > .square-37:not(.dragging)::after,
-chess-board.board > .square-57:not(.dragging)::after,
-chess-board.board > .square-77:not(.dragging)::after,
-chess-board.board > .square-28:not(.dragging)::after,
-chess-board.board > .square-48:not(.dragging)::after,
-chess-board.board > .square-68:not(.dragging)::after,
-chess-board.board > .square-88:not(.dragging)::after {
+wc-chess-board.board > .square-11:not(.dragging)::after,
+wc-chess-board.board > .square-31:not(.dragging)::after,
+wc-chess-board.board > .square-51:not(.dragging)::after,
+wc-chess-board.board > .square-71:not(.dragging)::after,
+wc-chess-board.board > .square-22:not(.dragging)::after,
+wc-chess-board.board > .square-42:not(.dragging)::after,
+wc-chess-board.board > .square-62:not(.dragging)::after,
+wc-chess-board.board > .square-82:not(.dragging)::after,
+wc-chess-board.board > .square-13:not(.dragging)::after,
+wc-chess-board.board > .square-33:not(.dragging)::after,
+wc-chess-board.board > .square-53:not(.dragging)::after,
+wc-chess-board.board > .square-73:not(.dragging)::after,
+wc-chess-board.board > .square-24:not(.dragging)::after,
+wc-chess-board.board > .square-44:not(.dragging)::after,
+wc-chess-board.board > .square-64:not(.dragging)::after,
+wc-chess-board.board > .square-84:not(.dragging)::after,
+wc-chess-board.board > .square-15:not(.dragging)::after,
+wc-chess-board.board > .square-35:not(.dragging)::after,
+wc-chess-board.board > .square-55:not(.dragging)::after,
+wc-chess-board.board > .square-75:not(.dragging)::after,
+wc-chess-board.board > .square-26:not(.dragging)::after,
+wc-chess-board.board > .square-46:not(.dragging)::after,
+wc-chess-board.board > .square-66:not(.dragging)::after,
+wc-chess-board.board > .square-86:not(.dragging)::after,
+wc-chess-board.board > .square-17:not(.dragging)::after,
+wc-chess-board.board > .square-37:not(.dragging)::after,
+wc-chess-board.board > .square-57:not(.dragging)::after,
+wc-chess-board.board > .square-77:not(.dragging)::after,
+wc-chess-board.board > .square-28:not(.dragging)::after,
+wc-chess-board.board > .square-48:not(.dragging)::after,
+wc-chess-board.board > .square-68:not(.dragging)::after,
+wc-chess-board.board > .square-88:not(.dragging)::after {
     filter: brightness(0.5);
 }
 
-chess-board.board > .piece.wp::after,
-chess-board.board > .piece.wr::after,
-chess-board.board > .piece.wn::after,
-chess-board.board > .piece.wb::after,
-chess-board.board > .piece.wk::after,
-chess-board.board > .piece.wq::after {
+wc-chess-board.board > .piece.wp::after,
+wc-chess-board.board > .piece.wr::after,
+wc-chess-board.board > .piece.wn::after,
+wc-chess-board.board > .piece.wb::after,
+wc-chess-board.board > .piece.wk::after,
+wc-chess-board.board > .piece.wq::after {
     color: hsl(0, 0%, 100%);
 }
 
-chess-board.board > .piece.bp::after,
-chess-board.board > .piece.br::after,
-chess-board.board > .piece.bn::after,
-chess-board.board > .piece.bb::after,
-chess-board.board > .piece.bk::after,
-chess-board.board > .piece.bq::after {
+wc-chess-board.board > .piece.bp::after,
+wc-chess-board.board > .piece.br::after,
+wc-chess-board.board > .piece.bn::after,
+wc-chess-board.board > .piece.bb::after,
+wc-chess-board.board > .piece.bk::after,
+wc-chess-board.board > .piece.bq::after {
     color: hsl(40, 100%, 50%);
 }
 
-chess-board.board.wk-danger > .piece.wk::after,
-chess-board.board.bk-danger > .piece.bk::after {
+wc-chess-board.board.wk-danger > .piece.wk::after,
+wc-chess-board.board.bk-danger > .piece.bk::after {
     color: hsl(0, 100%, 50%);
     text-shadow: 0 0 20px hsl(0, 100%, 50%);
     opacity: 1;
 }
 
-chess-board.board > div.highlight {
+wc-chess-board.board > div.highlight {
     background-color: hsl(160, 100%, 50%) !important;
     background-image: linear-gradient(90deg, hsl(160, 100%, 50%) 50%, #000 50%, #000 0);
     background-size: 2px auto;
     opacity: 0.3 !important;
 }
 
-chess-board.board > .hover-square {
+wc-chess-board.board > .hover-square {
     font-size: var(--cdr-font-size, 114px);
     line-height: var(--cdr-font-size, 114px);
 }
 
-chess-board.board > .hover-square {
+wc-chess-board.board > .hover-square {
     border: 2px dashed hsl(160, 100%, 50%) !important;
 }
 
@@ -173,7 +173,7 @@ chess-board.board > .hover-square {
         top: 0;
     }
 }
-chess-board.board > .hover-square::before {
+wc-chess-board.board > .hover-square::before {
     content: "";
     position: absolute;
     left: 0;

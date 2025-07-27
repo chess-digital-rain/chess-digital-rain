@@ -192,7 +192,7 @@ function getPixelRatio() {
 }
 
 function handleChessBoard() {
-	elms.chessBoard = document.querySelector('chess-board.board');
+	elms.chessBoard = document.querySelector('wc-chess-board.board');
 	//elms.chessBoard.style.backgroundImage = `url("${chrome.extension.getURL('img/bg.jpg')}")`;
 	const coordinatesElm = elms.chessBoard.querySelector('.coordinates:not(.outside)');
 	if (coordinatesElm) {
@@ -200,6 +200,7 @@ function handleChessBoard() {
 	}
 }
 
+/*
 function onMoveListChanged(mutationsList) {
 	for (let mutation of mutationsList) {
 		if (mutation.type === 'childList' && mutation.addedNodes && mutation.addedNodes.length > 0) {
@@ -255,15 +256,16 @@ function onMoveListChanged(mutationsList) {
 		}
 	}
 }
-
+*/
+/*
 function handleMoveList() {
-	elms.moveList = document.querySelector('.vertical-move-list');
+	elms.moveList = document.querySelector('wc-simple-move-list.move-list');
 	const observer = new MutationObserver(onMoveListChanged);
 	const config = { attributes: false, childList: true, subtree: true };
 	observer.observe(elms.moveList, config);
 	//observer.disconnect();
 }
-
+*/
 function createMainElement() {
 	elms.main = document.createElement('div');
 	elms.main.setAttribute('id', 'cdr-main');
@@ -308,7 +310,7 @@ function clearMessages() {
 function setup() {
 	addFonts();
 	handleChessBoard();
-	handleMoveList();
+	//handleMoveList();
 	createMainElement();
 	createCanvasElement();
 	updateBoardSize();
@@ -348,16 +350,16 @@ function draw() {
 
 // start ---------------------------------------------------------------------------------------------------------------
 
-setInterval(() => {
-	const isGameScreen = document.querySelector('chess-board.board') && document.querySelector('.vertical-move-list');
+function init() {
+	const isGameScreen = document.querySelector('wc-chess-board.board') && document.querySelector('wc-simple-move-list.move-list');
 	if (!isGameScreen) {
-		return;
-	}
-	const hasCdrMain = document.getElementById('cdr-main');
-	if (hasCdrMain) {
+		setTimeout(init, 3000);
 		return;
 	}
 	setup();
 	draw();
 	elms.chessBoard.style.opacity = '1';
-}, 3000);
+	return true;
+}
+
+init();
